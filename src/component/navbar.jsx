@@ -7,7 +7,7 @@ function ColorSchemesExample() {
     <>
       <Navbar bg="dark" data-bs-theme="dark" expand="lg" >
         <Container fluid>
-          <Navbar.Brand href="/">MATH SOLVE HELPER</Navbar.Brand>
+          <Navbar.Brand href="/">MATH SOLVE HOMEWORK HELPER</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">SCAN</Nav.Link>
             <Nav.Link href="/calculator">CALCULATOR</Nav.Link>

@@ -1,16 +1,33 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
-const MathJaxComponent = ({ latex }) => {
-  const containerRef = useRef();
-
+const MathJaxComponent = ({ mathExpression }) => {
   useEffect(() => {
-    if (window.MathJax) {
-        console.log( window.MathJax.Hub)
-        window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub]);
-    }
-  }, [latex]);
+    // Khởi tạo MathJax
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']],
+      },
+    };
 
-  return <div ref={containerRef}>{latex}</div>;
+    // Load các tệp JavaScript của MathJax
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML';
+    script.async = true;
+    document.body.appendChild(script);
+
+    // Khi tệp JavaScript được tải xong, thực hiện lại MathJax
+    script.onload = () => {
+      window.MathJax.typeset();
+    };
+  }, [mathExpression]);
+
+  return (
+    <div>
+      {/* Hiển thị công thức toán học */}
+      <span>{mathExpression}</span>
+    </div>
+  );
 };
 
 export default MathJaxComponent;
