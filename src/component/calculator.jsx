@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import axios from "axios";
-import MathJax from "react-mathjax";
 import Container from 'react-bootstrap/Container';
 import MathInput from "react-math-keyboard";
 import PlotlyGraph from "./plotly";
@@ -48,7 +47,6 @@ const Calculator = () => {
         <h2>Calculator</h2>
         <MathInput setValue={setLatex}/>
         <button style={{ marginTop: 10, marginBottom: 10 }} onClick={handleSolveMath}>Solve</button>
-        {latex && <MathJax.Node formula={latex} />}
         {result && (
           <div>
             Results:{" "}

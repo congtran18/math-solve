@@ -105,7 +105,6 @@ const Scan = () => {
         >
           Scan Solve
         </button>
-        {latex && <MathJax.Node formula={latex} />}
         {result && (
           <div>
             Results:{" "}
