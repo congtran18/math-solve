@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import axios from "axios";
-import MathJax from "react-mathjax";
 import PlotlyGraph from "./plotly";
 import FadeLoader from "react-spinners/FadeLoader";
 
